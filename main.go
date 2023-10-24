@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+
+	"github.com/hraghu25/hotelreservationsystem/server"
+)
 
 func main() {
-	fmt.Println("This is my first commit for Hotel reservation system")
+	ListenAddress := flag.String("listenAddre", ":8080", "The listen address of API server")
+
+	server.Execute(ListenAddress)
 }
